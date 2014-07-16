@@ -1,6 +1,7 @@
 package me.massacrer.euler;
 
-public class Problem017 {
+public class Problem017
+{
 	// number of characters in the number - one->3, three->5, etc
 	// 0 added as element 0 to make array access code cleaner
 	public static final int [] ones = {0, 3, 3, 5, 4, 4, 3, 5, 5, 4};
