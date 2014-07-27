@@ -3,7 +3,7 @@ package me.massacrer.euler;
 import java.util.HashMap;
 import java.util.Stack;
 
-public class Problem5 {
+public class Problem005 {
 
 	public static void main(String[] args) {
 		HashMap<Long, Integer> map = new HashMap<>();
@@ -11,7 +11,7 @@ public class Problem5 {
 		for (int i = 1; i <= 20; i++) {
 			HashMap<Long, Integer> innerMap = new HashMap<>();
 			Stack<Long> factors;
-			System.out.println(factors = Problem3.trialDiv3((long) i));
+			System.out.println(factors = Problem003.trialDiv3((long) i));
 			for (long f : factors) {
 				if (!innerMap.containsKey(f)) {
 					innerMap.put(f, 0);

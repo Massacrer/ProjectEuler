@@ -2,7 +2,7 @@ package me.massacrer.euler;
 
 import java.util.LinkedList;
 
-public class Problem1 {
+public class Problem001 {
 	static LinkedList<Integer> numbers = new LinkedList<Integer>();
 
 	public static void main(String[] args) {

@@ -1,13 +1,13 @@
 package me.massacrer.euler;
 
-public class Problem4 {
+public class Problem004 {
 	private int base = 999;
 
 	public static void main(String[] args) {
-		new Problem4();
+		new Problem004();
 	}
 
-	private Problem4() {
+	private Problem004() {
 		for (int i = 600; i < 999; i++) {
 			System.out.println(i);
 			for (int j = 600; j < 999; j++) {

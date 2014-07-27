@@ -2,7 +2,7 @@ package me.massacrer.euler;
 
 import java.math.BigInteger;
 
-public class Problem7 {
+public class Problem007 {
 
 	// this feels like a horrible abuse of hardware time
 	// TODO: optimise
@@ -17,7 +17,7 @@ public class Problem7 {
 		int primesFound = 0;
 		BigInteger latestPrime = new BigInteger("0");
 		while (primesFound < 10001) {
-			if (Problem3.trialDiv3(numberTested).size() == 1) {
+			if (Problem003.trialDiv3(numberTested).size() == 1) {
 				latestPrime = BigInteger.valueOf(numberTested);
 				primesFound++;
 			}

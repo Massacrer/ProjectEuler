@@ -1,6 +1,6 @@
 package me.massacrer.euler;
 
-public class Problem2 {
+public class Problem002 {
 
 	public static void main(String[] args) {
 		int a = 1, b = 2, fib = 2, sum = 0;

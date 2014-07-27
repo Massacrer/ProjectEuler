@@ -3,7 +3,7 @@ package me.massacrer.euler;
 import java.util.LinkedList;
 import java.util.Stack;
 
-public class Problem3 {
+public class Problem003 {
 	// private Stack<Long> composites = new Stack<Long>();
 	private Stack<Long> factors = new Stack<Long>();
 
@@ -21,7 +21,7 @@ public class Problem3 {
 		// p3.composites.push();
 
 		// p3.fermat(start);
-		System.out.println(Problem3.trialDiv3(start));
+		System.out.println(Problem003.trialDiv3(start));
 	}
 
 	private void fermat(long n) {
