@@ -20,12 +20,13 @@ public class Problem017
 	// hopefully faster than calling Math.pow(double, double) all the time
 	public static final int [] powersOfTen = {1, 10, 100, 1000};
 	
-	//debug
-	private static final boolean DEBUG = false;
+	// DEBUG
+	// private static final boolean DEBUG = false;
 	// private static final String [] dbgOnes = {"[zero]", "one","two","three","four","five","six","seven","eight","nine"};
 	// private static final String [] dbgTeens = {"ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"};
 	// private static final String [] dbgTens = {"[tens0]","ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
 	
+	// Main loop - iterates over numbers 1 -> 1000, sums their character counts
 	public static void main(String[] args)
 	{
 		int totalChars = 0;
@@ -36,6 +37,7 @@ public class Problem017
 		System.out.println(totalChars);
 	}
 	
+	// Returns the number of characters in a given number
 	private static int charsInNumber(int number)
 	{
 		if (number > 9999)
@@ -45,20 +47,26 @@ public class Problem017
 					"Cannot handle numbers larger than 9999");
 		}
 		
+		// result - initialised to 0;
 		int letterCount = 0;
 		//DEBUG
 		//String dbgStr = "";
 
+		// iterate over powers of 10 in reverse order to reflect how numbers
+		// are read - e.g. one thousand, one hundred and one
+		// starts at powerOfTen = 3: thousands (see powersOfTen[])
 		for (int currentPowerOfTen = 3; number > 0 && currentPowerOfTen >= 0;
 				currentPowerOfTen--)
 		{
 			// handle "teen"s specially
 			if (number < 20 && number >= 10)
 			{
+				// 17 is stored in teens[7], etc, so subtract 10 for offset
 				letterCount += teens[number - 10];
-				//DEBUG
-				//if(DEBUG) dbgStr += dbgTeens[number - 10];
-				// finished
+				// DEBUG
+				// if(DEBUG) dbgStr += dbgTeens[number - 10];
+				
+				// finished - "teen" is always the last expression
 				number = 0;
 				// if this offends you, feel free to comment it out
 				// saves a few arithmetic operations
@@ -66,7 +74,7 @@ public class Problem017
 			}
 			
 			// get number to lookup length of word for using quotient
-			// e.g. 4567 / 1000 = 4
+			// e.g. 4567 / 1000 = 4 using integer division
 			int powerTenCount = (number / powersOfTen[currentPowerOfTen]);
 			// zero this column (xyz -> 0yz) by subtracting
 			number -= (powerTenCount * powersOfTen[currentPowerOfTen]);
@@ -89,9 +97,9 @@ public class Problem017
 			//						powersOfTen[currentPowerOfTen] : "");
 			
 			// note: uses boolean short-circuiting to avoid out of bounds
-			// lookup for final condition when currentPowerTen == 0
+			// lookup for condition when currentPowerTen == 0
 			// (useAnd[0] is false -> powersTen[-1] is not looked up)
-			// therefore, do not set useAnd[0] to true
+			// therefore, useAnd[0] must be false
 			if
 			(
 				(
@@ -111,13 +119,15 @@ public class Problem017
 				)
 				&&
 				(
-						// "one thousand, one hundred",
-						// "one thousand and fifty"
+						// if number is less than the next lowest power of 10
+						// e.g. "one thousand and fifty",
+						// contrast "one thousand, one hundred"
 						number < powersOfTen[currentPowerOfTen - 1]
 								// hundreds exclusively always use "and"
 								|| currentPowerOfTen == 2
 				)
 			)
+			// if all of that is true
 			{
 				// stick an "and" on the end
 				// ("and").length == 3
