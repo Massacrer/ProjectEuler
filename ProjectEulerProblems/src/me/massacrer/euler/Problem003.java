@@ -122,6 +122,9 @@ public class Problem003 {
 	
 	// comments, yay
 	public static Stack<Long> trialDiv3(Long product) {
+		if (product < 1) {
+			throw new IllegalArgumentException("Product cannot be 0 or negative");
+		}
 		Stack<Long> factors = new Stack<Long>();
 		long possibleFactor = 2;
 		while (product != 1) {
@@ -132,7 +135,8 @@ public class Problem003 {
 			while (possibleFactor <= maxdiv && !foundFactor) {
 				maxdiv = product / possibleFactor;
 				if (product % possibleFactor == 0) {
-					product /= possibleFactor;
+					// product /= possibleFactor;
+					product = maxdiv;
 					foundFactor = true;
 				} else {
 					// only increment if factor not found - enables checking for duplicate factors
