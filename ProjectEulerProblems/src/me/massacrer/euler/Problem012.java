@@ -3,7 +3,7 @@ package me.massacrer.euler;
 import java.util.Stack;
 import java.util.Vector;
 
-public class Problem12
+public class Problem012
 {
 	
 	public static void main(String[] args)
