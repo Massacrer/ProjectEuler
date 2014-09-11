@@ -15,7 +15,7 @@ public class Problem013
 		
 		BigInteger count = BigInteger.valueOf(0);
 		for (String string : strings)
-		{	
+		{
 			count = count.add(new BigInteger(string));
 		}
 		System.out.println(count.toString().substring(0, 10));
